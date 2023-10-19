@@ -1,0 +1,40 @@
+        body {
+            font-family: Arial, sans-serif;
+            background-color: aqua;
+        }
+
+        form {
+            width: 500px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: azure;
+
+        }
+            
+        
+
+        
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            height: 25px;
+        }
+
+        input[type=radio] {
+            width: auto;
+        }
+
+        button {
+            width: 100px;
+            margin-right: 10px;
+            margin-left: 90px;
+        }
+

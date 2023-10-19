@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <form id="survey-form" onsubmit="return submitForm()" onreset="return resetForm()">
+        <table>
+            <tr>
+                <td><label for="first-name">First Name</label></td>
+                <td colspan="3"><input type="text" id="first-name" name="first-name" required></td>
+            </tr>
+            <tr>
+                <td><label for="last-name">Last Name</label></td>
+                <td colspan="3"><input type="text" id="last-name" name="last-name" required></td>
+            </tr>
+            <tr>
+                <td><label for="dob">Date of Birth</label></td>
+                <td colspan="3"><input type="date" id="dob" name="dob" required></td>
+            </tr>
+            <tr>
+
+                <td> <label for="country">Country</label></td>
+                <td colspan="3"><select id="country" name="country" required>
+                        <option value="">Select a country</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender</label></td>
+                <td><input type="radio" id="male" name="gender" value="Male">
+                    <label for="male">Male</label>
+                </td>
+                <td><input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                </td>
+                <td><input type="radio" id="other" name="gender" value="Other">
+                    <label for="other">Other</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="profession">Profession</label></td>
+                <td colspan="3"><input type="text" id="profession" name="profession" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email</label></td>
+
+                <td colspan="3"><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+
+                <td><label for="mobile-number">Mob. Number</label></td>
+                <td colspan="3"><input type="tel" id="mobile-number" name="mobile-number" required></td>
+            </tr>
+        </table>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <dialog id="dialog">
+        <div id="popContent">
+            <h3 style="text-align: center;" id="headerText"></h3>
+            <table>
+                <tr>
+                    <td><label for="first-name">First Name </label></td>
+                    <td colspan="3" id="first-name-value"></td>
+                </tr>
+                <tr>
+                    <td><label for="last-name">Last Name  </label></td>
+                    <td colspan="3" id="last-name-value"></td>
+                </tr>
+                <tr>
+                    <td><label for="dob">Date of Birth </label></td>
+                    <td colspan="3" id="dob-value"></td>
+                </tr>
+                <tr>
+                    <td> <label for="country">Country</label></td>
+                    <td colspan="3" id="country-value"></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender </label></td>
+                    <td colspan="3" id="gender-value"></td>
+                </tr>
+                <tr>
+                    <td><label for="profession">Profession </label></td>
+                    <td colspan="3" id="profession-value"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email  </label></td>
+                    <td colspan="3" id="email-value"></td>
+                </tr>
+                <tr>
+                    <td><label for="mobile-number">Mob. Number </label></td>
+                    <td colspan="3" id="mobile-number-value"></td>
+                </tr>
+            </table>
+        </div>
+        <br /><br /><br />
+        <button onclick="closeModal()" class="right">Close</button>
+    </dialog>
+
+    <script type="text/javascript" src="form.js"></script>
+    <script type="text/javascript" src="countries.js"></script>
+    <script type="text/javascript">
+
+        var select = document.getElementById("country");
+        countries.forEach(country => {
+            var ele = document.createElement('option');
+            ele.innerText = country.name;
+            ele.value = country.name;
+            select.appendChild(ele);
+        });
+    </script>
+</body>
+
+</html>
