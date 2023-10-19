@@ -1,10 +1,10 @@
 
-// Function to validate the form inputs
+
 function validateForm() {
-    // Get the form element
+    
     var form = document.getElementById("survey-form");
 
-    // Get the input elements
+    
     var firstName = form.elements["first-name"];
     var lastName = form.elements["last-name"];
     var dob = form.elements["dob"];
@@ -14,13 +14,13 @@ function validateForm() {
     var email = form.elements["email"];
     var mobileNumber = form.elements["mobile-number"];
 
-    // Check if any input is empty
+  
     if (firstName.value == "" || lastName.value == "" || dob.value == "" || country.value == "" || profession.value == "" || email.value == "" || mobileNumber.value == "") {
         alert("Please fill all the fields");
         return false;
     }
 
-    // Check if any gender is checked
+    
     var genderChecked = false;
     for (var i = 0; i < gender.length; i++) {
         if (gender[i].checked) {
@@ -34,7 +34,7 @@ function validateForm() {
         return false;
     }
 
-    // Check if the email is valid
+    
     var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
     if (!emailRegex.test(email.value)) {
@@ -42,7 +42,7 @@ function validateForm() {
         return false;
     }
 
-    // Check if the mobile number is valid
+    
     var mobileNumberRegex = /^[0-9]{10}$/;
 
     if (!mobileNumberRegex.test(mobileNumber.value)) {
@@ -50,21 +50,21 @@ function validateForm() {
         return false;
     }
 
-    // If all validations pass, return true
+    
     return true;
 }
 
-// Function to submit the form and display the popup
+
 function submitForm() {
-    // Validate the form inputs
+    
     if (!validateForm()) {
         return false;
     }
 
-    // Get the form element
+    
     var form = document.getElementById("survey-form");
 
-    // Get the input elements
+    
     var firstName = form.elements["first-name"];
     var lastName = form.elements["last-name"];
     var dob = form.elements["dob"];
@@ -74,7 +74,7 @@ function submitForm() {
     var email = form.elements["email"];
     var mobileNumber = form.elements["mobile-number"];
 
-    // Create a popup message with the input values and labels
+   
     var headerText = "You have submitted the following information:";
     document.getElementById("headerText").innerHTML = headerText;
 
@@ -94,19 +94,19 @@ function submitForm() {
 
     openModal();
 
-    // Reset the form values
+    
     resetForm();
 
-    // Prevent the default form submission action
+    
     return false;
 }
 
-// Function to reset the form values
+
 function resetForm() {
-    // Get the form element
+    
     var form = document.getElementById("survey-form");
 
-    // Get the input elements
+   
     var firstName = form.elements["first-name"];
     var lastName = form.elements["last-name"];
     var dob = form.elements["dob"];
@@ -116,7 +116,7 @@ function resetForm() {
     var email = form.elements["email"];
     var mobileNumber = form.elements["mobile-number"];
 
-    // Reset the input values
+    
     firstName.value = "";
     lastName.value = "";
     dob.value = "";
@@ -130,7 +130,7 @@ function resetForm() {
     email.value = "";
     mobileNumber.value = "";
 
-    // Return false to prevent the default reset action
+    
     return false;
 }
 var dailog = document.getElementById("dialog");
